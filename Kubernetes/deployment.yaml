@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netflix-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nf-app
+  template:
+    metadata:
+      labels:
+        app: nf-app
+    spec:
+      containers:
+      - name: nf-container
+        image: vijaygiduthuri/netflix:latest ## change with your image
+        ports:
+        - containerPort: 4000
