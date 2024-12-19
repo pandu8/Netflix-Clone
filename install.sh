@@ -17,3 +17,9 @@ sudo apt-get install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 
+#### Docker Installation
+sudo apt-get update
+sudo apt-get install docker.io -y
+sudo usermod -aG docker $USER   # replace the user (in my case it is ubuntu)
+newgrp docker
+sudo chmod 777 /var/run/docker.sock
