@@ -1,2 +1,2 @@
 # Netflix-Clone
-Deploying Netflix Clone on AWS using DevSecOps Approach
+Deploying Netflix Clone on AWS & Kubernetes using DevSecOps Approach. 
