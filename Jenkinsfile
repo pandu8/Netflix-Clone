@@ -5,7 +5,7 @@ pipeline {
         SCANNER_HOME=tool 'sonar-server'
     }
     stages {
-        stage('clean woekspace') {
+        stage('clean workspace') {
             steps{
                 cleanWs()
             }
@@ -41,7 +41,7 @@ pipeline {
                 sh "trivy fs . > trivyfs.txt"
             }
         }
-        stage ("Build & Push to DockerHub") {
+        stage ("Build Image & Push to DockerHub") {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
@@ -52,7 +52,7 @@ pipeline {
                 }
             }
         }
-        stage("TRIVY"){
+        stage("TRIVY Image Scan"){
             steps{
                 sh "trivy image kalyanvasu08/netflix:latest > trivyimage.txt"
             }
