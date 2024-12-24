@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        SCANNER_HOME=tool 'sonar-server'
+        SCANNER_HOME=tool 'sonar-scanner'
     }
     stages {
         stage('clean workspace') {
