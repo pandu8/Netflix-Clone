@@ -30,3 +30,7 @@ wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dear
 echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
 sudo apt-get update
 sudo apt-get install trivy -y
+
+### Docker Scout Installation
+-->first login to docker hub in terminal (your ubuntu machine) and after login succeeded use below command 
+curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin
