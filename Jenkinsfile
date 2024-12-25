@@ -70,7 +70,7 @@ pipeline {
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 81:8000 kalyanvasu08/netflix:latest'
+                sh 'docker run -d --name netflix -p 8000:80 kalyanvasu08/netflix:latest'
             }
         }
     }
