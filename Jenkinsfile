@@ -61,8 +61,8 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh 'docker-scout quickview kalyanvasu08/netflix:latest'
-                        sh 'docker-scout cves kalyanvasu08/netflix:latest'
+                        sh 'docker-scout quickview kalyanvasu08/netflix:latest > scout.txt'
+                        sh 'docker-scout cves kalyanvasu08/netflix:latest > scout.txt'
                         sh 'docker-scout recommendations kalyanvasu08/netflix:latest'
                     }
                 }
@@ -82,7 +82,7 @@ pipeline {
                 "Build Number: ${env.BUILD_NUMBER}<br/>" +
                 "URL: ${env.BUILD_URL}<br/>",
             to: 'xxxxxxx@gmail.com', ##give your mail here
-            attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
+            attachmentsPattern: 'trivyfs.txt,trivyimage.txt,scout.txt'
         }
     }
 }
